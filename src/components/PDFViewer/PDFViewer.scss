@@ -1,0 +1,13 @@
+@import "../../App.scss";
+
+.PDFViewer {
+    display: flex;
+    flex-direction: column;
+    background-color: $neutral;
+    color: $dark;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid $dark;
+    width: 100%;
+    height: 100%;
+}

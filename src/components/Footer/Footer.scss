@@ -1,0 +1,14 @@
+@import "../../App.scss";
+
+footer {
+    background-color: $dark;
+    color: $neutral;
+    font-family: "Consolas", "Monospace", "Roboto", sans-serif;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+a {
+    color: $neutral;
+}
