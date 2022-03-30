@@ -1,0 +1,11 @@
+@import '../../App.scss';
+
+.FileLister {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $neutral;
+    color: $dark;
+    height: 100%;
+    border: 2px solid $dark;
+}

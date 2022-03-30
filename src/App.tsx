@@ -4,6 +4,7 @@ import './App.scss';
 import Footer from './components/Footer/Footer';
 import PDFViewer from './components/PDFViewer/PDFViewer';
 import AudioPlayer from './components/AudioPlayer/AudioPlayer';
+import FileLister from './components/FileLister/FileLister';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <PDFViewer />
         <div className="vertical-flex-container max-size">
           <AudioPlayer />
-          <p> test </p>
+          <FileLister />
         </div>
       </div>
       <Footer />

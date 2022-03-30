@@ -2,6 +2,10 @@ $neutral: #ead2ac;
 $neutral-light: #f7e3c4;
 $dark: #30343f;
 
+html {
+    overflow: hidden;
+}
+
 .App {
     display: flex;
     flex-direction: column;
