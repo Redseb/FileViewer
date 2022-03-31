@@ -9,5 +9,13 @@
     justify-content: center;
     border: 2px solid $dark;
     width: 100%;
-    height: 100%;
+    .pg-viewer-wrapper {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
 }

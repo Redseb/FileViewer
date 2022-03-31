@@ -1,12 +1,15 @@
 @import "../../App.scss";
 
 footer {
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
     background-color: $dark;
     color: $neutral;
     font-family: "Consolas", "Monospace", "Roboto", sans-serif;
     font-size: 1.2rem;
     text-align: left;
-    padding-left: 1.0rem;
+    padding-left: 1rem;
 }
 
 a {
