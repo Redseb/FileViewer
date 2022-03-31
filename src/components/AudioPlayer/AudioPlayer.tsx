@@ -1,14 +1,27 @@
-import { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import './AudioPlayer.scss';
 //components
 import ReactAudioPlayer from 'react-audio-player';
 import { useDropzone } from 'react-dropzone';
+//types
+import { File } from '../../types/Files';
 
-type File = {
-    name: string;
-    url: string;
-    type: string;
-}
+const baseStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#ead2ac',
+    borderColor: '#30343f',
+    borderWidth: 2,
+    borderStyle: 'solid',
+    height: '50%'
+} as React.CSSProperties;
+
+const activeDragStyle = {
+    backgroundColor: '#f7e3c4',
+    borderStyle: 'dashed',
+} as React.CSSProperties;
 
 const AudioPlayer = () => {
     const [file, setFile] = useState<File>({
@@ -19,12 +32,6 @@ const AudioPlayer = () => {
 
     const onDrop = useCallback((acceptedFiles) => {
         acceptedFiles.forEach((file: any) => {
-            const reader = new FileReader()
-            reader.onload = () => {
-                // Do whatever you want with the file contents
-                const binaryStr = reader.result
-                console.log(binaryStr)
-            }
             setFile({
                 name: file.name,
                 url: URL.createObjectURL(file),
@@ -33,16 +40,20 @@ const AudioPlayer = () => {
         })
 
     }, []);
+    const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
 
-    const { getRootProps, getInputProps } = useDropzone({ onDrop })
+    const style = useMemo(() => ({
+        ...baseStyle,
+        ...(isDragActive ? activeDragStyle : {})
+    }), [
+        isDragActive
+    ]);
 
     return (
-        <div className="AudioPlayer">
-            <div {...getRootProps()}>
-                <input {...getInputProps()} />
-                <p>{file.name === "" ? 'No audio file selected. Try dragging and dropping a file.' : file.name}</p>
+        <div {...getRootProps({ style })} >
+            <input {...getInputProps()} />
+            <p>{file.name === "" ? 'No audio file selected. Try dragging and dropping a file.' : file.name}</p>
 
-            </div>
             <ReactAudioPlayer
                 src={file.url}
                 controls

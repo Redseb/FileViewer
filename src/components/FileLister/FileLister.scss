@@ -1,4 +1,4 @@
-@import '../../App.scss';
+@import "../../App.scss";
 
 .FileLister {
     display: flex;
@@ -7,5 +7,7 @@
     background-color: $neutral;
     color: $dark;
     height: 100%;
-    border: 2px solid $dark;
+    border-top: 2px solid $dark;
+    border-left: 2px solid $dark;
+    border-right: 2px solid $dark;
 }
