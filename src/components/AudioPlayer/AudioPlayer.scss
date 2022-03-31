@@ -5,14 +5,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: $neutral;
     border: 2px solid $dark;
     height: 50%;
-    inactive-dropzone {
-        background-color: white;
-        border: 2px dashed $dark;
-    }
-
-    active-dropzone {
-        background-color: $neutral;
-    }
+    transition: all 0.5s ease;
 }
